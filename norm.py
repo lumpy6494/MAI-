@@ -12,3 +12,18 @@ def result(E):
         SE[n] = s
     SE = SE / S
     return SE
+
+
+
+def norm_summ(vektor):
+    result = np.zeros(len(vektor))
+    summ = 0
+    for i in vektor:
+        summ=summ+i
+    for n in range(len(vektor)):
+        result[n] = vektor[n]/summ
+
+    return result
+
+
+

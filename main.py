@@ -1,5 +1,5 @@
 from __init__ import np
-from norm import result
+from norm import result, norm_summ
 from harmory import harmony, not_harm
 from parsr import parn_sr
 from normal_svert import svertka_oc, norm_svertka_oc, summ_one_st
@@ -173,6 +173,10 @@ print("\nСумма по первым стобцам : ")
 summ = summ_one_st(NormSvOC,len(alt1))
 print(summ)
 
+print("\nИтоговая Нормализация : ")
+norm_summ = norm_summ(summ)
+print(norm_summ)
+
 
 # Получение итоговой оценки МАИ
 N=len(alt1)
@@ -192,7 +196,7 @@ print ("max=",alt1[pos])
 NN=len(alt1)
 RRES=np.zeros(NN)
 for kk in range(NN):
-    RRES[kk]= summ[kk]
+    RRES[kk]= norm_summ[kk]
 print('\nМАИ+ Оценки')
 print(RRES)
 max = RRES[0]
